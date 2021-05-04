@@ -1,5 +1,7 @@
 <h1>Calculadora em React</h1>
 
+<img src="./Display.png">
+
 <p>Projeto desenvolvido com HTML5, CSS3 e React</p>
 
 <p>O projeto atende as quatro operações basicas da matemática (soma, subtração, multiplicação e divisão)</p>
