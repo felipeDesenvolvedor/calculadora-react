@@ -2,6 +2,7 @@ import React from "react"
 import Button from "./Button"
 import NumbersInput from "./NumbersInput"
 import ResultFinal from "./ResultFinal"
+import Container from "./Container"
 
 class Teclado extends React.Component{
     constructor(props) {
@@ -119,7 +120,7 @@ class Teclado extends React.Component{
 
     render() {
         return (
-            <>
+            <Container>
                 <ResultFinal>{this.state.resultFinal}</ResultFinal>
                 <NumbersInput onChange={this.numbersInput} value={this.state.numbersInput}/>
 
@@ -150,7 +151,7 @@ class Teclado extends React.Component{
                     <Button className="button__apagar">apagar</Button>
                     <Button onClick={this.equal} className="equal">=</Button>
                 </div>
-            </>
+            </Container>
          )
     }
 }

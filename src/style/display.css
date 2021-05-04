@@ -1,3 +1,9 @@
 .esconder {
     display: none;
 }
+
+#NumbersInput,
+.result__final {
+    align-self: flex-end;
+}
+
