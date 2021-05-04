@@ -19,13 +19,13 @@ class Teclado extends React.Component{
         this.filterOperation = this.filterOperation.bind(this)
         this.handleOperation = this.handleOperation.bind(this)
         this.numbersInput    = this.numbersInput.bind(this)
-        this.apagar          = this.apagar.bind(this)
+        this.delete          = this.delete.bind(this)
+        this.clear           = this.clear.bind(this)
         this.equal           = this.equal.bind(this)
     }
 
     numbersInput(event) {
         let value = event.target.innerText
-        document.querySelector("#NumbersInput").classList.remove('esconder')
 
         this.setState(state => {
             return {numbersInput:state.numbersInput + value}
@@ -61,12 +61,36 @@ class Teclado extends React.Component{
         }  
     }
     
-    apagar() {
+    clear() {
         this.setState({factorOne:""})
         this.setState({factorTwo:""})
         this.setState({operation:""})        
         this.setState({numbersInput:""})
         this.setState({resultFinal:""})
+    }
+
+    delete() {
+        this.setState(state => {
+            let stringLentgh = state.numbersInput.length
+            return {numbersInput:state.numbersInput.slice(0, stringLentgh - 1)}
+        })
+
+        if(this.state.factorTwo) {
+            this.setState(state => {
+                let stringLentgh = state.factorTwo.length
+                return {factorTwo:state.factorTwo.slice(0, stringLentgh - 1)}
+            })
+        }else if(this.state.operation) {
+            this.setState(state => {
+                let stringLentgh = state.operation.length
+                return {operation:state.operation.slice(0, stringLentgh - 1)}
+            })
+        }else if(this.state.factorOne) {
+            this.setState(state => {
+                let stringLentgh = state.factorOne.length
+                return {factorOne:state.factorOne.slice(0, stringLentgh - 1)}
+            })
+        }
     }
 
     equal(event) {
@@ -95,8 +119,6 @@ class Teclado extends React.Component{
             return
         }
 
-        // this.apagar()
-
         let value = event.target.innerText
         
         if(value == "=") {
@@ -120,7 +142,7 @@ class Teclado extends React.Component{
 
                 <div className="teclado">
                     
-                    <Button onClick={this.apagar} className="button__c">C</Button>
+                    <Button onClick={this.clear} className="button__c">C</Button>
                     <Button onClick={this.porcentagem} className="button__porcent">%</Button>
                     <Button onClick={this.handleOperation} className="button__divisao">/</Button>
                     <Button onClick={this.handleOperation} className="button__multip">*</Button>
@@ -142,7 +164,7 @@ class Teclado extends React.Component{
                     
                     <Button onClick={this.numbersInput} className="button__zero">0</Button>
                     <Button className="button__virgula">,</Button>
-                    <Button className="button__apagar"><i class="fas fa-backspace"></i></Button>
+                    <Button onClick={this.delete} className="button__apagar"><i class="fas fa-backspace"></i></Button>
                     <Button onClick={this.equal} className="equal">=</Button>
                 </div>
             </Container>
