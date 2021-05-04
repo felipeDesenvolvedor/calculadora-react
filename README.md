@@ -1,5 +1,9 @@
 <h1>Calculadora em React</h1>
 
+<p>Projeto desenvolvido com HTML5, CSS3 e React</p>
+
+<p>O projeto atende as quatro operações basicas da matemática (soma, subtração, multiplicação e divisão)</p>
+
 <p>Para testar o projeto desenvolvido, realizar o passo a passo abaixo.</p>
 
 <ul>
