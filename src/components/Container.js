@@ -5,7 +5,7 @@ const Container = styled.section`
     display:flex;
     flex-direction:column;
     align-content:flex-end;
-    width:400px;
+    width:300px;
     position:absolute;
     top:50%;
     left:50%;
@@ -13,7 +13,10 @@ const Container = styled.section`
     background-color:var(--color-default);
     padding:1px;
     font-size:18px;
-    
+
+    @media (min-width:400px) {
+      width:380px;
+    }
 `
 
 export default Container
