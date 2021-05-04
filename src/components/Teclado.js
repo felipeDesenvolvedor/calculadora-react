@@ -131,7 +131,6 @@ class Teclado extends React.Component{
                 <div className="teclado">
                     
                     <Button onClick={this.clear} className="button__c">C</Button>
-                    <Button onClick={this.porcentagem} className="button__porcent">%</Button>
                     <Button onClick={this.handleOperation} className="button__divisao">/</Button>
                     <Button onClick={this.handleOperation} className="button__multip">*</Button>
                     
