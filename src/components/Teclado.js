@@ -148,7 +148,7 @@ class Teclado extends React.Component{
                     
                     <Button onClick={this.numbersInput} className="button__zero">0</Button>
                     <Button className="button__virgula">,</Button>
-                    <Button className="button__apagar">apagar</Button>
+                    <Button className="button__apagar"><i class="fas fa-backspace"></i></Button>
                     <Button onClick={this.equal} className="equal">=</Button>
                 </div>
             </Container>

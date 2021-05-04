@@ -12,6 +12,7 @@ const Container = styled.section`
     transform:translate(-50%, -50%);
     background-color:var(--color-default);
     padding:1px;
+    font-size:18px;
     
 `
 
