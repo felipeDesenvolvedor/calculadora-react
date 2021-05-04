@@ -97,34 +97,22 @@ class Teclado extends React.Component{
         
         if (this.state.operation == "+") {
             let result = parseFloat(this.state.factorOne) + parseFloat(this.state.factorTwo)
-            this.setState({resultFinal:result})
+            this.setState({resultFinal:result.toFixed(2)})
         }
 
         if (this.state.operation == "-") {
             let result = parseFloat(this.state.factorOne) - parseFloat(this.state.factorTwo)
-            this.setState({resultFinal:result})
+            this.setState({resultFinal:result.toFixed(2)})
         }
 
         if (this.state.operation == "*") {
             let result = parseFloat(this.state.factorOne) * parseFloat(this.state.factorTwo)
-            this.setState({resultFinal:result})
+            this.setState({resultFinal:result.toFixed(2)})
         }
 
         if (this.state.operation == "/") {
             let result = parseFloat(this.state.factorOne) / parseFloat(this.state.factorTwo)
-            this.setState({resultFinal:result})
-        }
-
-        if(!event) {
-            return
-        }
-
-        let value = event.target.innerText
-        
-        if(value == "=") {
-            document.querySelector("#NumbersInput").classList.add('esconder')
-        }else {
-            document.querySelector("#NumbersInput").classList.remove('esconder')
+            this.setState({resultFinal:result.toFixed(2)})
         }
     }
 
@@ -163,7 +151,7 @@ class Teclado extends React.Component{
                     <Button onClick={this.numbersInput} className="equal">=</Button>
                     
                     <Button onClick={this.numbersInput} className="button__zero">0</Button>
-                    <Button className="button__virgula">,</Button>
+                    <Button onClick={this.numbersInput} className="button__virgula">.</Button>
                     <Button onClick={this.delete} className="button__apagar"><i class="fas fa-backspace"></i></Button>
                     <Button onClick={this.equal} className="equal">=</Button>
                 </div>
