@@ -1,7 +1,11 @@
+import Teclado from "./components/Teclado";
+import Container from "./components/Container";
+
 function App() {
   return (
-    <div className="App">
-    </div>
+    <Container>
+      <Teclado/>
+    </Container>
   );
 }
 
