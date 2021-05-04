@@ -16,13 +16,10 @@ class Teclado extends React.Component{
         }
 
         this.filterOperation = this.filterOperation.bind(this)
-        this.multiplicacao   = this.multiplicacao.bind(this)
+        this.handleOperation = this.handleOperation.bind(this)
         this.numbersInput    = this.numbersInput.bind(this)
-        this.subtracao       = this.subtracao.bind(this)
-        this.divisao         = this.divisao.bind(this)
         this.apagar          = this.apagar.bind(this)
         this.equal           = this.equal.bind(this)
-        this.soma            = this.soma.bind(this)
     }
 
     numbersInput(event) {
@@ -43,8 +40,7 @@ class Teclado extends React.Component{
         }
     }
 
-    soma(event) {
-        
+    handleOperation(event) {
         let filterOperation = this.filterOperation()
 
         if(!filterOperation) {
@@ -55,55 +51,7 @@ class Teclado extends React.Component{
             })
 
             this.setState({operation:value})
-        }
-    }
-
-    multiplicacao(event) {
-
-        let filterOperation = this.filterOperation()
-
-        if(!filterOperation) {
-            let value = event.target.innerText
-
-            this.setState(state => {
-                return {numbersInput:state.numbersInput + value}
-            })
-    
-            this.setState({operation:value})
-        }
-    }
-
-    divisao(event) {
-        let filterOperation = this.filterOperation()
-
-        if(!filterOperation) {
-            let value = event.target.innerText
-
-            this.setState(state => {
-                return {numbersInput:state.numbersInput + value}
-            })
-
-            this.setState({operation:value})
-        }
-    }
-
-    subtracao(event) {
-
-        let filterOperation = this.filterOperation()
-
-        if(!filterOperation) {
-            let value = event.target.innerText
-
-            this.setState(state => {
-                return {numbersInput:state.numbersInput + value}
-            })
-    
-            this.setState({operation:value})
-        }
-    }
-
-    porcentagem() {
-
+        }  
     }
     
     apagar() {
@@ -162,10 +110,10 @@ class Teclado extends React.Component{
 
                     <Button onClick={this.apagar}>C</Button>
                     <Button onClick={this.porcentagem}>%</Button>
-                    <Button onClick={this.divisao}>/</Button>
-                    <Button onClick={this.multiplicacao}>*</Button>
-                    <Button onClick={this.subtracao}>-</Button>
-                    <Button onClick={this.soma}>+</Button>
+                    <Button onClick={this.handleOperation}>/</Button>
+                    <Button onClick={this.handleOperation}>*</Button>
+                    <Button onClick={this.handleOperation}>-</Button>
+                    <Button onClick={this.handleOperation}>+</Button>
                     <Button onClick={this.equal}>=</Button>
                     <Button onClick={this.numbersInput}>,</Button>
                 </div>
