@@ -49,6 +49,11 @@ class Teclado extends React.Component{
     }
 
     handleOperation(event) {
+
+        if(!this.state.factorOne) {
+            return
+        }
+
         let filterOperation = this.filterOperation()
 
         if(!filterOperation) {
