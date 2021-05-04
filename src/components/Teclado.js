@@ -15,13 +15,14 @@ class Teclado extends React.Component{
             operation:""
         }
 
-        this.multiplicacao = this.multiplicacao.bind(this)
-        this.numbersInput  = this.numbersInput.bind(this)
-        this.subtracao     = this.subtracao.bind(this)
-        this.divisao       = this.divisao.bind(this)
-        this.apagar        = this.apagar.bind(this)
-        this.equal         = this.equal.bind(this)
-        this.soma          = this.soma.bind(this)
+        this.filterOperation = this.filterOperation.bind(this)
+        this.multiplicacao   = this.multiplicacao.bind(this)
+        this.numbersInput    = this.numbersInput.bind(this)
+        this.subtracao       = this.subtracao.bind(this)
+        this.divisao         = this.divisao.bind(this)
+        this.apagar          = this.apagar.bind(this)
+        this.equal           = this.equal.bind(this)
+        this.soma            = this.soma.bind(this)
     }
 
     numbersInput(event) {
@@ -43,43 +44,62 @@ class Teclado extends React.Component{
     }
 
     soma(event) {
-        let value = event.target.innerText
+        
+        let filterOperation = this.filterOperation()
 
-        this.setState(state => {
-            return {numbersInput:state.numbersInput + value}
-        })
+        if(!filterOperation) {
+            let value = event.target.innerText
 
-        this.setState({operation:value})
+            this.setState(state => {
+                return {numbersInput:state.numbersInput + value}
+            })
+
+            this.setState({operation:value})
+        }
     }
 
     multiplicacao(event) {
-        let value = event.target.innerText
 
-        this.setState(state => {
-            return {numbersInput:state.numbersInput + value}
-        })
+        let filterOperation = this.filterOperation()
 
-        this.setState({operation:value})
+        if(!filterOperation) {
+            let value = event.target.innerText
+
+            this.setState(state => {
+                return {numbersInput:state.numbersInput + value}
+            })
+    
+            this.setState({operation:value})
+        }
     }
 
     divisao(event) {
-        let value = event.target.innerText
+        let filterOperation = this.filterOperation()
 
-        this.setState(state => {
-            return {numbersInput:state.numbersInput + value}
-        })
+        if(!filterOperation) {
+            let value = event.target.innerText
 
-        this.setState({operation:value})
+            this.setState(state => {
+                return {numbersInput:state.numbersInput + value}
+            })
+
+            this.setState({operation:value})
+        }
     }
 
     subtracao(event) {
-        let value = event.target.innerText
 
-        this.setState(state => {
-            return {numbersInput:state.numbersInput + value}
-        })
+        let filterOperation = this.filterOperation()
 
-        this.setState({operation:value})
+        if(!filterOperation) {
+            let value = event.target.innerText
+
+            this.setState(state => {
+                return {numbersInput:state.numbersInput + value}
+            })
+    
+            this.setState({operation:value})
+        }
     }
 
     porcentagem() {
@@ -87,6 +107,9 @@ class Teclado extends React.Component{
     }
     
     apagar() {
+        this.setState({factorOne:""})
+        this.setState({factorTwo:""})
+        this.setState({operation:""})        
         this.setState({numbersInput:""})
     }
 
@@ -110,6 +133,12 @@ class Teclado extends React.Component{
         if (this.state.operation == "/") {
             let result = parseFloat(this.state.factorOne) / parseFloat(this.state.factorTwo)
             this.setState({resultFinal:result})
+        }
+    }
+
+    filterOperation() {
+        if(this.state.operation) {
+            return true
         }
     }
 
