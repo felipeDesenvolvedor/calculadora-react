@@ -1,0 +1,11 @@
+:root {  
+    --color-default:#343957;
+    --color-teme:#FF3664;
+    --color-overlay:#767B98;
+    --color-ButtonsGrupoUm:#3A3F5D;
+    --color-ButtonsGrupoDois:#4F556F;
+}
+
+body {
+    background-color:var(--color-overlay);
+}

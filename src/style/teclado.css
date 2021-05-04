@@ -9,6 +9,19 @@
     "zero virgula apagar equal"
 }
 
+.button__c,
+.button__porcent,
+.button__divisao,
+.button__multip,
+.button__soma,
+.button__subtr {
+    background-color:var(--color-ButtonsGrupoDois) !important;
+    color:var(--color-teme) !important;
+}
+
+.equal {
+    background-color:var(--color-teme);
+}
 
 .button__c {
     grid-area:c;
