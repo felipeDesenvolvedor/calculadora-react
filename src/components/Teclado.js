@@ -105,7 +105,7 @@ class Teclado extends React.Component{
             this.setState({resultFinal:result.toFixed(2)})
         }
 
-        if (this.state.operation == "*") {
+        if (this.state.operation == "x") {
             let result = parseFloat(this.state.factorOne) * parseFloat(this.state.factorTwo)
             this.setState({resultFinal:result.toFixed(2)})
         }
@@ -132,7 +132,7 @@ class Teclado extends React.Component{
                     
                     <Button onClick={this.clear} className="button__c">C</Button>
                     <Button onClick={this.handleOperation} className="button__divisao">/</Button>
-                    <Button onClick={this.handleOperation} className="button__multip">*</Button>
+                    <Button onClick={this.handleOperation} className="button__multip">x</Button>
                     
                     <Button onClick={this.numbersInput} className="button__sete">7</Button>
                     <Button onClick={this.numbersInput} className="button__oito">8</Button>
