@@ -24,6 +24,7 @@ class Teclado extends React.Component{
 
     numbersInput(event) {
         let value = event.target.innerText
+        document.querySelector("#NumbersInput").classList.remove('esconder')
 
         this.setState(state => {
             return {numbersInput:state.numbersInput + value}
@@ -68,8 +69,8 @@ class Teclado extends React.Component{
         this.setState({numbersInput:""})
     }
 
-    equal() {
-
+    equal(event) {
+        
         if (this.state.operation == "+") {
             let result = parseFloat(this.state.factorOne) + parseFloat(this.state.factorTwo)
             this.setState({resultFinal:result})
@@ -88,6 +89,20 @@ class Teclado extends React.Component{
         if (this.state.operation == "/") {
             let result = parseFloat(this.state.factorOne) / parseFloat(this.state.factorTwo)
             this.setState({resultFinal:result})
+        }
+
+        if(!event) {
+            return
+        }
+
+        this.apagar()
+
+        let value = event.target.innerText
+        
+        if(value == "=") {
+            document.querySelector("#NumbersInput").classList.add('esconder')
+        }else {
+            document.querySelector("#NumbersInput").classList.remove('esconder')
         }
     }
 
