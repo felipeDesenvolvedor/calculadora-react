@@ -1,0 +1,81 @@
+.teclado {
+    display:grid;
+    grid-template: auto auto auto auto auto / auto auto auto auto;
+    grid-template-areas: 
+    "c porcent divisao multip"
+    "sete oito nove subtr"
+    "quatro cinco seis soma"
+    "um dois tres equal"
+    "zero virgula apagar equal"
+}
+
+
+.button__c {
+    grid-area:c;
+}
+.button__porcent {
+    grid-area:porcent;
+}
+.button__divisao {
+    grid-area:divisao;
+}
+.button__multip {
+    grid-area:multip;
+}
+
+/* ------- */
+
+.button__sete {
+    grid-area:sete;
+}
+.button__oito {
+    grid-area:oito;
+}
+.button__nove {
+    grid-area:nove;
+}
+.button__subtr {
+    grid-area:subtr;
+}
+
+/* ------- */
+
+.button__quatro {
+    grid-area:quatro;
+}
+.button__cinco {
+    grid-area:cinco;
+}
+.button__seis {
+    grid-area:seis;
+}
+.button__soma {
+    grid-area:soma;
+}
+
+/* ------- */
+
+.button__um {
+    grid-area:um;
+}
+.button__dois {
+    grid-area:dois;
+}
+.button__tres {
+    grid-area:tres;
+}
+.equal {
+    grid-area:equal;
+}
+
+/* ------- */
+
+.button__zero {
+    grid-area:zero;
+}
+.button__virgula {
+    grid-area:virgula;
+}
+.button__apagar {
+    grid-area:apagar;
+}

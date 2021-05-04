@@ -120,29 +120,35 @@ class Teclado extends React.Component{
     render() {
         return (
             <>
-                <NumbersInput onChange={this.numbersInput} value={this.state.numbersInput}/>
                 <ResultFinal>{this.state.resultFinal}</ResultFinal>
+                <NumbersInput onChange={this.numbersInput} value={this.state.numbersInput}/>
 
                 <div className="teclado">
-                    <Button onClick={this.numbersInput} value="9">9</Button>
-                    <Button onClick={this.numbersInput}>8</Button>
-                    <Button onClick={this.numbersInput}>7</Button>
-                    <Button onClick={this.numbersInput}>6</Button>
-                    <Button onClick={this.numbersInput}>5</Button>
-                    <Button onClick={this.numbersInput}>4</Button>
-                    <Button onClick={this.numbersInput}>3</Button>
-                    <Button onClick={this.numbersInput}>2</Button>
-                    <Button onClick={this.numbersInput}>1</Button>
-                    <Button onClick={this.numbersInput}>0</Button>
+                    
+                    <Button onClick={this.apagar} className="button__c">C</Button>
+                    <Button onClick={this.porcentagem} className="button__porcent">%</Button>
+                    <Button onClick={this.handleOperation} className="button__divisao">/</Button>
+                    <Button onClick={this.handleOperation} className="button__multip">*</Button>
+                    
+                    <Button onClick={this.numbersInput} className="button__sete">7</Button>
+                    <Button onClick={this.numbersInput} className="button__oito">8</Button>
+                    <Button onClick={this.numbersInput} className="button__nove">9</Button>
+                    <Button onClick={this.handleOperation} className="button__subtr">-</Button>
 
-                    <Button onClick={this.apagar}>C</Button>
-                    <Button onClick={this.porcentagem}>%</Button>
-                    <Button onClick={this.handleOperation}>/</Button>
-                    <Button onClick={this.handleOperation}>*</Button>
-                    <Button onClick={this.handleOperation}>-</Button>
-                    <Button onClick={this.handleOperation}>+</Button>
-                    <Button onClick={this.equal}>=</Button>
-                    <Button onClick={this.numbersInput}>,</Button>
+                    <Button onClick={this.numbersInput} className="button__quatro">4</Button>
+                    <Button onClick={this.numbersInput} className="button__cinco">5</Button>
+                    <Button onClick={this.numbersInput} className="button__seis">6</Button>
+                    <Button onClick={this.handleOperation} className="button__soma">+</Button>
+
+                    <Button onClick={this.numbersInput} className="button__um">1</Button>
+                    <Button onClick={this.numbersInput} className="button__dois">2</Button>
+                    <Button onClick={this.numbersInput} className="button__tres">3</Button>
+                    <Button onClick={this.numbersInput} className="equal">=</Button>
+                    
+                    <Button onClick={this.numbersInput} className="button__zero">0</Button>
+                    <Button className="button__virgula">,</Button>
+                    <Button className="button__apagar">apagar</Button>
+                    <Button onClick={this.equal} className="equal">=</Button>
                 </div>
             </>
          )
