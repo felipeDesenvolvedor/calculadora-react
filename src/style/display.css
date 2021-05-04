@@ -1,10 +1,11 @@
 .esconder {
-    display: none;
+    /* display: none; */
 }
 
 #NumbersInput,
 .result__final {
     align-self: flex-end;
     color:white;
+    margin-right: 10px;
 }
 

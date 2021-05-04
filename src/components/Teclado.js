@@ -46,7 +46,7 @@ class Teclado extends React.Component{
             if(this.state.factorOne && this.state.operation && this.state.factorTwo) {
                 this.equal()
             }
-        }, 2000)
+        }, 1000)
     }
 
     handleOperation(event) {
@@ -121,8 +121,8 @@ class Teclado extends React.Component{
     render() {
         return (
             <Container>
-                <ResultFinal>{this.state.resultFinal}</ResultFinal>
                 <NumbersInput onChange={this.numbersInput} value={this.state.numbersInput}/>
+                <ResultFinal>{this.state.resultFinal}</ResultFinal>
 
                 <div className="teclado">
                     
