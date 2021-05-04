@@ -38,6 +38,13 @@ class Teclado extends React.Component{
                 return {factorTwo:state.factorTwo + value}
             })
         }
+
+        setTimeout(() => {
+
+            if(this.state.factorOne && this.state.operation && this.state.factorTwo) {
+                this.equal()
+            }
+        }, 2000)
     }
 
     handleOperation(event) {
