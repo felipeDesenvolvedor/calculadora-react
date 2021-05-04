@@ -7,7 +7,7 @@ const NumbersInput = styled.input.attrs(() =>({
 }))`
     background-color:transparent;
     border:none;
-    letter-spacing:6px;
+    letter-spacing:3px;
     text-align:right;
     font-size:14px;
     line-height:100%;

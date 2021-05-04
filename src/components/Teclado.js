@@ -40,13 +40,6 @@ class Teclado extends React.Component{
                 return {factorTwo:state.factorTwo + value}
             })
         }
-
-        setTimeout(() => {
-
-            if(this.state.factorOne && this.state.operation && this.state.factorTwo) {
-                this.equal()
-            }
-        }, 1000)
     }
 
     handleOperation(event) {
@@ -73,6 +66,7 @@ class Teclado extends React.Component{
         this.setState({factorTwo:""})
         this.setState({operation:""})        
         this.setState({numbersInput:""})
+        this.setState({resultFinal:""})
     }
 
     equal(event) {
@@ -101,7 +95,7 @@ class Teclado extends React.Component{
             return
         }
 
-        this.apagar()
+        // this.apagar()
 
         let value = event.target.innerText
         
